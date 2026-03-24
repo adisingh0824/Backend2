@@ -1,0 +1,27 @@
+{
+  "name": "backend2",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/adisingh0824/Backend2#readme",
+  "bugs": {
+    "url": "https://github.com/adisingh0824/Backend2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adisingh0824/Backend2.git"
+  },
+  "license": "ISC",
+  "author": "Adi",
+  "type": "commonjs",
+  "main": "new.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "node": "^25.8.1",
+    "nodemon": "^3.1.14"
+  },
+  "keywords": []
+}
