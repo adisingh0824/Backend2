@@ -13,13 +13,14 @@
   "license": "ISC",
   "author": "Adi",
   "type": "commonjs",
-  "main": "new.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^5.2.1",
+    "mongoose": "^9.3.3",
     "node": "^25.8.1",
     "nodemon": "^3.1.14",
     "prompt-sync": "^4.2.0"
