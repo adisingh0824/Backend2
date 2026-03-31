@@ -9,12 +9,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/create', async (req, res) => {
-    let createduser = await userModel.create({
-        name: "adi",
-        email: "adi@gmail.com",
-        username: "adi"
-    })
-    res.send(createduser);
+})
+
+app.get('/update', async (req, res) => {
+    // let updateduser = await userModel.findOneAndUpdate({username: "adi"},{name: "Adi Singh"}, {new: true})
+    //
+    // res.send(updateduser);
     //console.log("hey");
+})
+
+app.get("/read",async(req, res) => {
+    let users = await userModel.find();
+    res.send(users);
 })
 app.listen(3000);
