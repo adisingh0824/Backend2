@@ -12,10 +12,10 @@ app.get('/create', async (req, res) => {
 })
 
 app.get('/update', async (req, res) => {
-    // let updateduser = await userModel.findOneAndUpdate({username: "adi"},{name: "Adi Singh"}, {new: true})
-    //
-    // res.send(updateduser);
-    //console.log("hey");
+    let updateduser = await userModel.findOneAndUpdate({username: "adi"},{name: "Adi Singh"}, {new: true})
+
+    res.send(updateduser);
+    console.log("hey");
 })
 
 app.get("/read",async(req, res) => {
