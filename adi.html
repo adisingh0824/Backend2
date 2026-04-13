@@ -10,15 +10,14 @@
         body {
             font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
             background: #d0d0d0;
-            font-size: 13.5px;
+            font-size: 12.5px;
             color: #1a1a1a;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .page {
             width: 210mm;
-            min-height: 297mm;
-            margin: 30px auto;
+            margin: 20px auto;
             background: #ffffff;
             box-shadow: 0 4px 24px rgba(0,0,0,0.25);
             overflow: hidden;
@@ -30,31 +29,45 @@
             display: flex;
             align-items: center;
             gap: 24px;
-            padding: 22px 32px;
+            padding: 16px 24px;
         }
 
         .photo-wrap {
             flex-shrink: 0;
-            width: 90px;
-            height: 90px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #ffffff;
+            border: 4px solid #ffffff;
             background: #2e3f5e;
             display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.15), 0 6px 18px rgba(0,0,0,0.35);
+        }
+        .photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.05) saturate(1.05);
         }
 
         .photo-placeholder {
-            font-size: 28px;
-            color: #a0b4c8;
-            font-weight: bold;
-            letter-spacing: -1px;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            color: #e6eef8;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: radial-gradient(circle at 30% 30%, #3a4f73, #1b2a4a);
         }
 
         .header-info { color: #ffffff; }
 
         .header-info h1 {
-            font-size: 30px;
+            font-size: 24px;
             font-weight: 700;
             letter-spacing: 0.5px;
             line-height: 1.1;
@@ -89,12 +102,12 @@
 
         /* ── BODY ── */
         .body {
-            padding: 18px 32px 28px;
+            padding: 10px 18px;
         }
 
         /* ── SECTION ── */
         .section {
-            margin-bottom: 14px;
+            margin-bottom: 8px;
         }
 
         .section-title {
@@ -105,7 +118,7 @@
             letter-spacing: 0.5px;
             border-bottom: 1.5px solid #1a1a1a;
             padding-bottom: 3px;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         /* ── OBJECTIVE ── */
@@ -117,7 +130,7 @@
 
         /* ── EDUCATION ── */
         .edu-item {
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
 
         .edu-degree {
@@ -145,7 +158,7 @@
         }
 
         .skills-table td {
-            padding: 2px 6px 2px 0;
+            padding: 1px 4px 1px 0;
             vertical-align: top;
             line-height: 1.55;
         }
@@ -196,7 +209,7 @@
             position: relative;
             font-size: 13px;
             color: #222;
-            margin-bottom: 3px;
+            margin-bottom: 1px;
             line-height: 1.55;
         }
 
@@ -234,8 +247,52 @@
         }
 
         @media print {
-            body { background: white; }
-            .page { box-shadow: none; margin: 0; width: 100%; }
+            * {
+                page-break-before: auto !important;
+                page-break-after: auto !important;
+            }
+
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+            }
+
+            /* Remove dark header for clean print */
+            .header {
+                background: #ffffff !important;
+                color: #000 !important;
+            }
+
+            .header-info,
+            .header-info h1,
+            .header-info .sub,
+            .contact-line span,
+            .contact-line a {
+                color: #000 !important;
+            }
+
+            /* Avoid breaking sections */
+            .section, .project {
+                page-break-inside: avoid;
+            }
+            .section {
+                break-inside: avoid;
+            }
+
+            .project {
+                break-inside: avoid;
+            }
+
+            @page {
+                margin: 10mm;
+            }
         }
     </style>
 </head>
@@ -245,18 +302,19 @@
     <!-- HEADER -->
     <div class="header">
         <div class="photo-wrap">
-            <div class="photo-placeholder">SS</div>
+            <img src="./adi.jpg" alt="Aditya Singh" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+            <div class="photo-placeholder">AS</div>
         </div>
         <div class="header-info">
             <h1>ADITYA SINGH</h1>
             <div class="sub">Aspiring Software Engineer &nbsp;|&nbsp; B.Tech CSE &nbsp;|&nbsp; GLA University</div>
             <div class="contact-line">
                 <span>📍 Kannauj, U.P.</span>
-                <span>📍 +91 9785854770</span>
+                <span>📞 +91 9785854770</span>
                 <a href="mailto:saditya7990@gmail.com">✉ saditya7990@gmail.com</a>
                 <br style="flex-basis:100%; height:0"/>
-                <a href="https://www.linkedin.com/in/adityasingh0824/" target="_blank">📍 linkedin.com/in/adityasingh0824</a>
-                <a href="https://github.com/SHIVANG1519" target="_blank">📍 https://github.com/SHIVANG1519</a>
+                <a href="https://www.linkedin.com/in/adityasingh0824/" target="_blank">🔗 linkedin.com/in/adityasingh0824</a>
+                <a href="https://github.com/adisingh0824" target="_blank">💻 github.com/adisingh0824</a>
             </div>
         </div>
     </div>
@@ -276,17 +334,17 @@
 
             <div class="edu-item">
                 <div class="edu-degree">Bachelor of Technology — Computer Science &amp; Engineering</div>
-                <div><span class="edu-school">GLA University, Mathura</span> &nbsp;|&nbsp; <span class="edu-detail">CGPA: 6.5 / 10 &nbsp;|&nbsp; Expected June 2028</span></div>
+                <div><span class="edu-school">GLA University, Mathura</span> &nbsp;|&nbsp; <span class="edu-detail">CGPA: 6.4 / 10 &nbsp;|&nbsp; Expected June 2028</span></div>
             </div>
 
             <div class="edu-item">
                 <div class="edu-degree">Intermediate (12th) — Science Stream</div>
-                <div><span class="edu-school">St. Xavier's School, Kannauj</span> &nbsp;|&nbsp; <span class="edu-detail">67.5% &nbsp;|&nbsp; May 2024</span></div>
+                <div><span class="edu-school">St. Xavier's School, Kannauj</span> &nbsp;|&nbsp; <span class="edu-detail">58.5% &nbsp;|&nbsp; May 2024</span></div>
             </div>
 
             <div class="edu-item">
                 <div class="edu-degree">High School (10th)</div>
-                <div><span class="edu-school">St. Xavier's School, Kannauj</span> &nbsp;|&nbsp; <span class="edu-detail">79.3% &nbsp;|&nbsp; May 2022</span></div>
+                <div><span class="edu-school">St. Xavier's School, Kannauj</span> &nbsp;|&nbsp; <span class="edu-detail">62.3% &nbsp;|&nbsp; May 2022</span></div>
             </div>
         </div>
 
@@ -322,19 +380,20 @@
         </div>
 
         <!-- PROJECTS -->
-        <div class="section">
+        <div class="section" style="page-break-before: auto;">
             <div class="section-title">■ PROJECTS</div>
 
             <div class="project">
                 <div class="project-header">
-                    <span class="project-title">StayFinder — PG Search &amp; Booking Platform</span>
+                    <span class="project-title">Ruh Imperium — Luxury Attar E-Commerce Platform</span>
                     <span class="project-date">Feb 2025 – Mar 2025</span>
                 </div>
-                <div class="project-tech">React.js · Node.js · MongoDB · Express.js · Google Maps API</div>
+                <div class="project-tech">React.js · Node.js · Express.js · MongoDB · Stripe API</div>
                 <ul>
-                    <li>Built a full-stack platform where 200+ PG listings near GLA University can be browsed and filtered by price, distance, and amenities — solving a real housing pain point for 5,000+ students.</li>
-                    <li>Engineered real-time Google Maps integration; users locate PGs within a custom radius drawn on an interactive map with live marker updates.</li>
-                    <li>Implemented JWT-based user authentication, landlord dashboard for listing management, and a mobile-first UI achieving sub-2 second load times.</li>
+                    <li>Developed a fully responsive e-commerce website for a luxury attar brand, enabling seamless product browsing, filtering, and secure online purchases.</li>
+                    <li>Designed an elegant, mobile-first UI focused on premium branding, ensuring a smooth and visually rich user experience across all devices.</li>
+                    <li>Implemented user authentication, cart management, and secure checkout functionality using Stripe for payment processing.</li>
+                    <li>Built a scalable backend with RESTful APIs for product management, order handling, and user data storage.</li>
                 </ul>
             </div>
 
@@ -369,8 +428,6 @@
             <div class="section-title">■ CERTIFICATIONS &amp; ACHIEVEMENTS</div>
             <ul class="cert-list">
                 <li>HTML, CSS, JavaScript Certification — Infosys Springboard (2025)</li>
-                <li>Web Development Training — Job-Oriented Value-Added Course, GLA University (June–July 2025)</li>
-                <li>Java Programming Workshop — Industry Expert, GLA University</li>
                 <li>LeetCode DSA Practice — 50+ problems solved across arrays, strings, recursion, and linked lists</li>
             </ul>
         </div>
@@ -380,7 +437,6 @@
             <div class="section-title">■ LEADERSHIP &amp; CO-CURRICULAR ACTIVITIES</div>
             <ul class="activity-list">
                 <li>Coordinated TECH NAVYA (Cultural Fest, GLA, Feb, 2025).</li>
-                <li>Associate Member GLA Code Chef (Chapter) (Code Buster, GLA, Jan, 2026 – Present).</li>
                 <li>Member of E – Cell, GLA University (Nov 2024 – Present).</li>
             </ul>
         </div>
