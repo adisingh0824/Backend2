@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aditya Singh — Resume</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+            background: #d0d0d0;
+            font-size: 13.5px;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 30px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: #1b2a4a;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 22px 32px;
+        }
+
+        .photo-wrap {
+            flex-shrink: 0;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            background: #2e3f5e;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .photo-placeholder {
+            font-size: 28px;
+            color: #a0b4c8;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .header-info { color: #ffffff; }
+
+        .header-info h1 {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+
+        .header-info .sub {
+            font-size: 13px;
+            color: #a8bbd0;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .contact-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 0;
+            font-size: 12px;
+            color: #c8d8e8;
+        }
+
+        .contact-line span, .contact-line a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #c8d8e8;
+            text-decoration: none;
+            margin-right: 16px;
+        }
+
+        .contact-line a:hover { color: #fff; text-decoration: underline; }
+
+        /* ── BODY ── */
+        .body {
+            padding: 18px 32px 28px;
+        }
+
+        /* ── SECTION ── */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1.5px solid #1a1a1a;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        /* ── OBJECTIVE ── */
+        .objective p {
+            font-size: 13px;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-item {
+            margin-bottom: 6px;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            font-size: 13px;
+            color: #1a1a1a;
+        }
+
+        .edu-school {
+            color: #1a6cb5;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .edu-detail {
+            font-size: 12.5px;
+            color: #444;
+        }
+
+        /* ── SKILLS TABLE ── */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .skills-table td {
+            padding: 2px 6px 2px 0;
+            vertical-align: top;
+            line-height: 1.55;
+        }
+
+        .skills-table td:first-child {
+            width: 140px;
+            font-weight: 700;
+            color: #1a6cb5;
+            white-space: nowrap;
+        }
+
+        /* ── PROJECTS ── */
+        .project { margin-bottom: 10px; }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 13.5px;
+            color: #1a1a1a;
+        }
+
+        .project-date {
+            font-size: 12px;
+            color: #555;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .project-tech {
+            color: #1a6cb5;
+            font-size: 12px;
+            font-style: italic;
+            margin: 1px 0 5px;
+        }
+
+        .project ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .project ul li {
+            padding-left: 18px;
+            position: relative;
+            font-size: 13px;
+            color: #222;
+            margin-bottom: 3px;
+            line-height: 1.55;
+        }
+
+        .project ul li::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-size: 9px;
+            top: 3px;
+        }
+
+        /* ── CERTIFICATIONS ── */
+        .cert-list, .activity-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-list li, .activity-list li {
+            padding-left: 18px;
+            position: relative;
+            font-size: 13px;
+            color: #222;
+            margin-bottom: 3px;
+            line-height: 1.55;
+        }
+
+        .cert-list li::before, .activity-list li::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-size: 9px;
+            top: 3px;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; margin: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="photo-wrap">
+            <div class="photo-placeholder">SS</div>
+        </div>
+        <div class="header-info">
+            <h1>ADITYA SINGH</h1>
+            <div class="sub">Aspiring Software Engineer &nbsp;|&nbsp; B.Tech CSE &nbsp;|&nbsp; GLA University</div>
+            <div class="contact-line">
+                <span>📍 Kannauj, U.P.</span>
+                <span>📍 +91 9785854770</span>
+                <a href="mailto:saditya7990@gmail.com">✉ saditya7990@gmail.com</a>
+                <br style="flex-basis:100%; height:0"/>
+                <a href="https://www.linkedin.com/in/adityasingh0824/" target="_blank">📍 linkedin.com/in/adityasingh0824</a>
+                <a href="https://github.com/SHIVANG1519" target="_blank">📍 https://github.com/SHIVANG1519</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+
+        <!-- OBJECTIVE -->
+        <div class="section">
+            <div class="section-title">■ OBJECTIVE</div>
+            <p class="objective">Motivated Computer Science undergraduate at GLA University with strong foundations in full-stack web development, data structures, and object-oriented programming. Seeking a software engineering internship where I can contribute to real-world product teams, sharpen my engineering skills, and grow within a culture of innovation and collaboration.</p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+            <div class="section-title">■ EDUCATION</div>
+
+            <div class="edu-item">
+                <div class="edu-degree">Bachelor of Technology — Computer Science &amp; Engineering</div>
+                <div><span class="edu-school">GLA University, Mathura</span> &nbsp;|&nbsp; <span class="edu-detail">CGPA: 6.5 / 10 &nbsp;|&nbsp; Expected June 2028</span></div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-degree">Intermediate (12th) — Science Stream</div>
+                <div><span class="edu-school">St. Xavier's School, Kannauj</span> &nbsp;|&nbsp; <span class="edu-detail">67.5% &nbsp;|&nbsp; May 2024</span></div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-degree">High School (10th)</div>
+                <div><span class="edu-school">St. Xavier's School, Kannauj</span> &nbsp;|&nbsp; <span class="edu-detail">79.3% &nbsp;|&nbsp; May 2022</span></div>
+            </div>
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="section">
+            <div class="section-title">■ TECHNICAL SKILLS</div>
+            <table class="skills-table">
+                <tr>
+                    <td>Languages</td>
+                    <td>Python, Java, JavaScript (ES6+), C, HTML5, CSS3</td>
+                </tr>
+                <tr>
+                    <td>Frameworks</td>
+                    <td>React.js, Node.js, Express.js</td>
+                </tr>
+                <tr>
+                    <td>Databases</td>
+                    <td>MongoDB, MySQL, Firebase</td>
+                </tr>
+                <tr>
+                    <td>Tools</td>
+                    <td>Git &amp; GitHub, VS Code, Linux CLI, Postman</td>
+                </tr>
+                <tr>
+                    <td>CS Fundamentals</td>
+                    <td>Data Structures &amp; Algorithms, OOP, DBMS, Operating Systems, Computer Networks</td>
+                </tr>
+                <tr>
+                    <td>Soft Skills</td>
+                    <td>Problem Solving, Team Collaboration, Effective Communication, Adaptability</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+            <div class="section-title">■ PROJECTS</div>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">StayFinder — PG Search &amp; Booking Platform</span>
+                    <span class="project-date">Feb 2025 – Mar 2025</span>
+                </div>
+                <div class="project-tech">React.js · Node.js · MongoDB · Express.js · Google Maps API</div>
+                <ul>
+                    <li>Built a full-stack platform where 200+ PG listings near GLA University can be browsed and filtered by price, distance, and amenities — solving a real housing pain point for 5,000+ students.</li>
+                    <li>Engineered real-time Google Maps integration; users locate PGs within a custom radius drawn on an interactive map with live marker updates.</li>
+                    <li>Implemented JWT-based user authentication, landlord dashboard for listing management, and a mobile-first UI achieving sub-2 second load times.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">TaskFlow — Smart To-Do App with Real-Time Sync</span>
+                    <span class="project-date">Nov 2024</span>
+                </div>
+                <div class="project-tech">JavaScript · Firebase Firestore · Firebase Auth · CSS3</div>
+                <ul>
+                    <li>Developed a productivity app where tasks sync instantly across all devices using Firebase real-time listeners — zero page refresh, changes appear in under 200 ms.</li>
+                    <li>Added Google OAuth login, drag-and-drop task reordering, priority tagging (High / Medium / Low), and deadline reminders via browser Notification API.</li>
+                    <li>Achieved 98/100 Google Lighthouse performance score; deployed on Firebase Hosting with automated CI/CD via GitHub Actions.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">DevPortfolio — Personal Portfolio with Dark Mode</span>
+                    <span class="project-date">Jan 2025</span>
+                </div>
+                <div class="project-tech">HTML5 · CSS3 · Vanilla JavaScript</div>
+                <ul>
+                    <li>Designed a fully responsive portfolio with smooth scroll animations, typewriter-effect hero section, and one-click dark/light mode toggle persisted via localStorage.</li>
+                    <li>Optimised CSS animations for 60 fps rendering on low-end devices; scored 95+ on Google Lighthouse for Performance, SEO, and Accessibility.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title">■ CERTIFICATIONS &amp; ACHIEVEMENTS</div>
+            <ul class="cert-list">
+                <li>HTML, CSS, JavaScript Certification — Infosys Springboard (2025)</li>
+                <li>Web Development Training — Job-Oriented Value-Added Course, GLA University (June–July 2025)</li>
+                <li>Java Programming Workshop — Industry Expert, GLA University</li>
+                <li>LeetCode DSA Practice — 50+ problems solved across arrays, strings, recursion, and linked lists</li>
+            </ul>
+        </div>
+
+        <!-- LEADERSHIP -->
+        <div class="section">
+            <div class="section-title">■ LEADERSHIP &amp; CO-CURRICULAR ACTIVITIES</div>
+            <ul class="activity-list">
+                <li>Coordinated TECH NAVYA (Cultural Fest, GLA, Feb, 2025).</li>
+                <li>Associate Member GLA Code Chef (Chapter) (Code Buster, GLA, Jan, 2026 – Present).</li>
+                <li>Member of E – Cell, GLA University (Nov 2024 – Present).</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
