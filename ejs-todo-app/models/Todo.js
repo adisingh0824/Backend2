@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-consttodoSchema=new mongoose.Schema({
+const todoSchema=new mongoose.Schema({
     title:String,
     completed: { type:Boolean, default:false },
     userId: { type:mongoose.Schema.Types.ObjectId, ref:"User" }

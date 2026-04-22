@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
-constapp = express();
+const app = express();
 
 // Middleware
 app.use(express.urlencoded({ extended:true }));
