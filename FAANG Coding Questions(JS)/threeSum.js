@@ -5,7 +5,6 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-// Three Sum Function
 function threeSum(nums) {
     nums.sort((a, b) => a - b);
     let res = [];
