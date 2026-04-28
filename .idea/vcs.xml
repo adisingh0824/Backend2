@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Backend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Backend 4/Backend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Backend 4/Backend/Experiment/git_pratical" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Backend/Experiment/git_pratical" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Experiment/git_pratical" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/devconnect" vcs="Git" />
   </component>
 </project>
