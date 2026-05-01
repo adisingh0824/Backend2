@@ -1,4 +1,5 @@
 // var maxProfit = function(prices) {
+////
 //     let min = prices[0], profit = 0;
 //     for (let p of prices) {
 //         min = Math.min(min, p);
